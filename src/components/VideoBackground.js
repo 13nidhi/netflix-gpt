@@ -1,0 +1,31 @@
+import React from 'react';
+import { useSelector } from 'react-redux';
+import useMovieTrailer from '../hooks/useMovieTrailer';
+
+
+const VideoBackground = ({movieId}) => {
+
+   //instead of storing trailer id into state we can use redux , so we don't need to use it
+  //const [trailer, setTrailerId] = useState(null);
+
+  const trailerVideo = useSelector(store => store.movies.trailerVideo);
+
+  //fetch trailer video and updating the store
+  useMovieTrailer(movieId);
+
+
+  return (
+    <div className=''>
+      <iframe 
+        className='w-screen aspect-video'
+        src={"https://www.youtube.com/embed/" + trailerVideo?.key + "?autoplay=1&mute=1"} 
+        title="YouTube video player" 
+        
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        >
+      </iframe>
+    </div>
+  )
+}
+
+export default VideoBackground;

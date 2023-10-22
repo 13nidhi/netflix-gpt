@@ -8,6 +8,7 @@ import {auth} from "../utils/firebase";
 import { updateProfile } from "firebase/auth";
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import {USER_AVATAR} from "../utils/constants";
 
 const Login = () => {
   //const navigate = useNavigate();
@@ -66,7 +67,7 @@ const Login = () => {
           console.log(user);
 
           updateProfile(auth.currentUser, {
-            displayName: nameValue, photoURL: "https://avatars.githubusercontent.com/u/47038775?v=4"
+            displayName: nameValue, photoURL: USER_AVATAR
           }).then(() => {
             // Profile updated! then again update the profile by calling action and  then navigate
             //here we are geeting the data from new auth user created, why we are using auth but not user 
