@@ -11,7 +11,7 @@ const MainContainer = () => {
     if(!movies) return   //or we can use anything if(movies === null) return;
 
     const mainMovie = movies[0];
-    console.log(mainMovie);
+    //console.log(mainMovie);
 
     const {original_title, overview, id} = mainMovie;
   return (
@@ -24,4 +24,4 @@ const MainContainer = () => {
   )
 }
 
-export default MainContainer
+export default MainContainer;

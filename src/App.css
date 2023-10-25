@@ -1,0 +1,7 @@
+body ::-webkit-scrollbar {
+    display: block;
+}
+
+.hide-scrollbar ::-webkit-scrollbar {
+    display: block;
+}
